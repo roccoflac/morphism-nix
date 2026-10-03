@@ -56,6 +56,7 @@
     fastfetch
     
     # Desktop
+    libnotify
 	#ladybird
     vesktop
     awww
@@ -71,6 +72,7 @@
 	bitwarden-desktop
 	
     # Audio
+    pavucontrol
     chow-tape-model
     reaper
     reaper-sws-extension

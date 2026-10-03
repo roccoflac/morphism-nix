@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   services.displayManager.sddm.enable = true;
@@ -19,6 +19,16 @@
     settings.default = [ "foot.desktop" ];
   };
 
+  xdg.portal = {
+    enable = true;
+    config.common.default = [ "gtk" ]; 
+    
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
+  };
+  
   security.rtkit.enable = true;
   services.pulseaudio.enable = false;
   services.pipewire = {

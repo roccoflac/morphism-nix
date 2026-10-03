@@ -32,6 +32,10 @@
     cliphist
     wl-clipboard
     
+    # Development
+    nim
+    nimble
+    
     # Security
     proton-vpn-cli
   ];
