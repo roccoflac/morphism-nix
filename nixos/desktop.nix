@@ -9,6 +9,12 @@
     xwayland.enable = true;
   };
 
+  services.gnome.gnome-keyring.enable = true;
+  services.dbus.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
+  
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  
   services.xserver.xkb = {
     layout = "us";
     variant = "";

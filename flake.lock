@@ -34,6 +34,47 @@
         "type": "github"
       }
     },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "serein",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788450739,
+        "narHash": "sha256-glZLQlzIn1fXH6PazR2iUmTo7kzzyYSshrWhLS9TqCU=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "31729ca8cbdb4fa927b34e5f4353e6a83f39e993",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "helium": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791557953,
+        "narHash": "sha256-6OeKE4EqRCzic78zbOiSpzLt10H08NvZNyU9Z7qP1gI=",
+        "owner": "oxcl",
+        "repo": "nix-flake-helium-browser",
+        "rev": "8e75e9f639451ddaaaf1c3e68134facb09cf5ad8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxcl",
+        "repo": "nix-flake-helium-browser",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -41,11 +82,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790365885,
-        "narHash": "sha256-iQ0ebhiVo64NktTnwft9hNxlFu4j5cvljVxyJaEVIP4=",
+        "lastModified": 1791484883,
+        "narHash": "sha256-iKxFHJrg7Sltwhq3ssCZYQ4CFEDVvReVVuVuO9dj3sE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7b4c5ec4bedaf1e062bbc1bcaeddbc6bd242aa1b",
+        "rev": "dfadbe5162d5e86bc0808badec8f346f81b4b3f0",
         "type": "github"
       },
       "original": {
@@ -123,11 +164,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1790463110,
-        "narHash": "sha256-hKlVl12B1dF0Q5vd9dY3lIJM5mFGWYSlXwSLAqHZ1+s=",
+        "lastModified": 1791456040,
+        "narHash": "sha256-H83yz/do+hjOO0uujHyH8RgtIQP2v7Mw+cLwcZK/xKc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e158d9ed9b51c98974c5e66e1ba1c9e0255fecaa",
+        "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
         "type": "github"
       },
       "original": {
@@ -139,11 +180,27 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1789149629,
-        "narHash": "sha256-H6GwaZzZf+4npqv0tph94w9tZddSjFjmQrVsW0z78uk=",
+        "lastModified": 1790689126,
+        "narHash": "sha256-ilerN1WLSvF+HMjziC/Wv99J5y02maDH+6hZPwsORKg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b4fd65b198c599cbe814fcb9f42d25d021595ec9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1790822859,
+        "narHash": "sha256-69xHQhAeMAD2wDXO7T2pcOZIF9Sga2W+JkmY2a11Ops=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "eaad089433ca2bb662274377d33df3d0e51ef28b",
+        "rev": "c59305bab2065cfecc4944690d9eedbb56f3a9fa",
         "type": "github"
       },
       "original": {
@@ -155,10 +212,12 @@
     },
     "root": {
       "inputs": {
+        "helium": "helium",
         "home-manager": "home-manager",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_2",
+        "serein": "serein",
         "sonora": "sonora"
       }
     },
@@ -183,17 +242,36 @@
         "type": "github"
       }
     },
+    "serein": {
+      "inputs": {
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1791555012,
+        "narHash": "sha256-oHGQhRQEuH50sf6CuLVxg8l6LcckxiYOSA2xA0pxiTo=",
+        "owner": "ViceVerse-cz",
+        "repo": "Serein",
+        "rev": "481a0c41cb0c79eef8deca636a77f6cb913f3e23",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ViceVerse-cz",
+        "repo": "Serein",
+        "type": "github"
+      }
+    },
     "sonora": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1790362344,
-        "narHash": "sha256-Y2vaIbopi/poBboWCxYyF+1X6dAI9D/rQhUmMEFP3hs=",
+        "lastModified": 1791402440,
+        "narHash": "sha256-yiunj91zUkRhxF7esHRzSrygPGp18kRpZfGBaqCcc7U=",
         "owner": "sonorahq",
         "repo": "sonora",
-        "rev": "b135b9c66d5bfc59d00752dfd3a2cd821c6c24af",
+        "rev": "8c382f175308021d85e0c25ef74bb2c174ec396e",
         "type": "github"
       },
       "original": {

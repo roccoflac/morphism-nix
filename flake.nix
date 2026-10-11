@@ -1,5 +1,5 @@
 {
-  description = "Rocco's NixOS configuration";
+  description = "sick ass nixos config";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -12,24 +12,46 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     sonora.url = "github:sonorahq/sonora";
+
+    serein = {
+      url = "github:ViceVerse-cz/Serein";
+    };
+
+    helium = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nix-flatpak, nix-cachyos-kernel, sonora, ... }:
+  outputs = {
+    nixpkgs,
+    home-manager,
+    nix-flatpak,
+    nix-cachyos-kernel,
+    sonora,
+    serein,
+    helium,
+    ...
+  }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [
-          # CachyOS recommends the pinned overlay so its prebuilt kernels
-          # match the nixpkgs revision they were built against.
           {
-            nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
-            home-manager.extraSpecialArgs = { inherit sonora; };
+            nixpkgs.overlays = [
+              nix-cachyos-kernel.overlays.pinned
+            ];
+
+            home-manager.extraSpecialArgs = {
+              inherit sonora serein;
+            };
           }
 
           ./nixos/configuration.nix
           nix-flatpak.nixosModules.nix-flatpak
           home-manager.nixosModules.default
+          helium.nixosModules.default
         ];
       };
     };
